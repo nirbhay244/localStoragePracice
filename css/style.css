@@ -1,0 +1,19 @@
+.fanBox{
+    margin: 80px 200px;
+    animation-name: fan;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+@keyframes fan {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(359deg);
+    }
+}
+.button{
+    margin: 80px 300px;
+}

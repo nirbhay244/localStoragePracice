@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <form onsubmit="myfunc(event)">
+        <input type="text" name="name" id="name" placeholder="Enter your name"><br><br>
+        <input type="text" name="middlename" id="middlename" placeholder="Enter your middle name"><br><br>
+        <input type="text" name="surnmae" id="surname" placeholder="Enter your surname"><br><br>
+        <input type="submit">
+    </form>
+    <form onsubmit="calculate(event)">
+    <input type="number" name="height" id="height" placeholder="enter height of traingle">
+    <input type="number" name="width" id="width" placeholder="enter the width of traingle">
+    <input type="submit">
+    </form>
+</body>
+<script>
+    let calculate = (event)=>{
+        event.preventDefault();
+        let height = document.getElementById("height").value;
+        let width = document.getElementById("width").value;
+        let result = 0.5 * Number(height) * Number(width);
+        localStorage.setItem('Area',result);
+    }
+
+
+    function myfunc(event){
+        event.preventDefault();
+        let input1 = document.getElementById("name").value;
+        
+        let input2 = document.getElementById("middlename").value;
+        let input3 = document.getElementById("surname").value;
+   
+        let result = `Enter name is ${input1} ${input2} ${input3}`
+        localStorage.setItem('submitData',result)
+    }
+// console.log(input1)
+</script>
+<script src="./js/script.js"></script>
+</html>
